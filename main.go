@@ -19,6 +19,7 @@ var errReadingInput = errors.New("Error reading input")
 
 func main() {
 	input := os.Args
+
 	if len(input) != 2 {
 		printError(errInvalidArguments)
 	}
