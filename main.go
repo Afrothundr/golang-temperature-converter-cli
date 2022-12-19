@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"strings"
 )
 
 var originUnit string
@@ -17,6 +18,12 @@ var errInvalidArguments = errors.New("Invalid arguments")
 var errReadingInput = errors.New("Error reading input")
 
 func main() {
+	input := os.Args
+	if len(input) != 2 {
+		printError(errInvalidArguments)
+	}
+
+	originUnit = strings.ToUpper(input[1])
 
 	for {
 		fmt.Print("What is the current temperature in " + originUnit + " ? ")
